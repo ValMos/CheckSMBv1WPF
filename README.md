@@ -14,3 +14,10 @@ In the trunk is a final version of script, in the brunch - scripts by steps.
 Целью в целом нельзя назвать сам поиск, скорее хотелось посмотреть как PowerShell можно облагородить хоть каким-то GUI для использования в дальнейшем.
 
 Скприт в реальности, понятное дело, не ограничен заданной темой, искать-то можно чего угодно - я и собрал-то его из кусков-запчастей найденных в Интернете и в голове :-)
+
+
+Есть идея дописать
+function PrintSearchResults () {
+    Format-Table -AutoSize -HideTableHeaders | Out-File -Append $txt_DiscoveryResults.Text -Encoding utf8
+}
+Но не знаю как это провернуть :-) Кто бы помог убогому..
