@@ -2,7 +2,7 @@
 # Придумано не мной, взято здесь
 # http://www.workingsysadmin.com/open-file-dialog-box-in-powershell/
 # Thanx to Thomas Rayner, who posted this
-# Всполмогательная функция для выбора файл
+# Вспомогательная функция для выбора файла
 function Get-FileName ($initialDirectory) {
     [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms") | Out-Null
 
