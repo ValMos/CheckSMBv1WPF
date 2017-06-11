@@ -1,0 +1,45 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="250" Width="600">
+    <Grid>
+        <StackPanel Margin="5" Orientation="Vertical">
+            <RadioButton x:Name="rbtn_SinglePC" GroupName="WCCheckMethod" Content="Single PC" IsChecked="True" Margin="5"/>
+            <TextBox x:Name="txt_SinglePC" Margin="5" ToolTip="Type PC's name or IP-address"/>
+            <RadioButton x:Name="rbtn_PCsList" GroupName="WCCheckMethod" Content="PCs List" Margin="5"/>
+            <DockPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="txt_PCsListFilePath" VerticalAlignment="Center" Margin="5" Grid.Column="0" ToolTip="Choose file for discovery"/>
+                    <Button x:Name="btn_PCsListChoose" Content="PCs list file" VerticalAlignment="Center" Margin="5" Grid.Column="1"/>
+                </Grid>
+            </DockPanel>
+
+            <DockPanel>
+                <DockPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txt_DiscoveryResults" VerticalAlignment="Center" Margin="5" Grid.Column="0" ToolTip="Choose file for results"/>
+                        <Button x:Name="btn_DiscoveryResults" Content="Results File" VerticalAlignment="Center" Margin="5" Grid.Column="1"/>
+                    </Grid>
+                </DockPanel>
+            </DockPanel>
+
+            <DockPanel>
+                <Button x:Name="btn_StartDiscovery" Content="Start Discovery" Margin="5"/>
+            </DockPanel>
+
+            <DockPanel>
+                <Label x:Name="lbl_CurrentStatus" Content="Current Status will be show here" Margin="5"/>
+            </DockPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
