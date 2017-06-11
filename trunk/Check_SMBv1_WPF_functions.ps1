@@ -93,7 +93,14 @@ function Get-DiscoveryPCs ($ComputersList) {
             Else {
                 $NotifyExitMessage = "Undefined OS/no WC-patches/patches not described/PC not found"
                 Write-Host $CurrentPC $CurrentPC_OSVersion $NotifyExitMessage
+                # Out-File -Append $txt_DiscoveryResults.Text -Encoding utf8
             }
     }
     Write-Host "Release all search cycles"
+
+    # CleanUp results file: delete empty lines
+    Write-Host "Cleanup results file"
+    (Get-Content $txt_DiscoveryResults.Text -Encoding UTF8) | Where-Object {$_.trim() -ne ""} | Set-Content $txt_DiscoveryResults.Text -Encoding UTF8
+    Write-Host "Cleanup finished"
+
 }
