@@ -15,6 +15,7 @@ function Get-FileName ($initialDirectory) {
 }
 
 # В процессе разработки - надо правильно описать входящий поток данных
+# In progress - need for input data - add into form textbox for display results
 function PrintSearchResults () {
     Format-Table -AutoSize -HideTableHeaders | Out-File -Append $txt_DiscoveryResults.Text -Encoding utf8
 }
@@ -93,7 +94,8 @@ function Get-DiscoveryPCs ($ComputersList) {
             Else {
                 $NotifyExitMessage = "Undefined OS/no WC-patches/patches not described/PC not found"
                 Write-Host $CurrentPC $CurrentPC_OSVersion $NotifyExitMessage
-                # Out-File -Append $txt_DiscoveryResults.Text -Encoding utf8
+                # Write message to file
+                Add-Content -Path $txt_DiscoveryResults.Text -Encoding UTF8 "$CurrentPC $CurrentPC_OSVersion $NotifyExitMessage"
             }
     }
     Write-Host "Release all search cycles"

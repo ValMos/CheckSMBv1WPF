@@ -3,7 +3,7 @@ Set-Location $PSScriptRoot
 # Import WPF form
 .\XamlBuilder.ps1 -XamlPath '.\Check_SMBv1_WPF_XamlForm.xaml'
 # Import working functions from another file
-. '.\Check_SMBv1_WPF_functions.ps1'
+Import-Module -Name .\Check_SMBv1_WPF_functions.ps1
 
 # Describe form's controls
 # Описываем управляющие элементы формы
